@@ -1,13 +1,14 @@
-import 'regenerator-runtime/runtime'
-import { API_URL, URL_COMICS, URL_CHARACTER } from './constants/api'
-import { getDataApi } from './utils/getDataApi'
+import 'regenerator-runtime/runtime';
+import App from './components/App/App';
+import Comics from './components/Comics/Comics';
+
 
 
 
 // асинхроная функция
 (async () => {
-    const data = await getDataApi.getData(API_URL + URL_COMICS)
-    console.log(data);
+    await App.render();
+    Comics.eventListener();
 })();
 
 

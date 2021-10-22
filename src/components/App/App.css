@@ -1,0 +1,40 @@
+:root {
+    --color-dark: #222;
+    --color-blue: #3199dc;
+    --color-ligth: #f8f9fa;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-dark);
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* firefox */
+* {
+    scrollbar-color: var(--color-blue) var(--color-dark);
+    scrollbar-width: thin;
+}
+
+ ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+}
+
