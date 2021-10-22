@@ -2,12 +2,13 @@ import { API_URL, URL_COMICS, IMG_STANDART_XLARGE, IMG_NOT_AVAILABLE, URL_CHARAC
 import { getDataApi } from '../../utils/getDataApi';
 import { ROOT_INDEX } from '../../constants/root';
 import Error from '../Error/Error';
+import Characters from '../Characters/Characters';
 import classes from './Comics.css'
 
 class Comics {
     // вызываем метод getData
     async render() {
-        const data = await getDataApi.getData(API_URL + URL_COMICS + 'test');
+        const data = await getDataApi.getData(API_URL + URL_COMICS);
         //проверка на ошибку
         data ? this.renderComics(data) : Error.render();
     }
@@ -42,7 +43,8 @@ class Comics {
         document.querySelectorAll('.comics__item').forEach(e => {
             const uri = e.getAttribute('data-uri')
             e.addEventListener('click', () => {
-                console.log(uri);
+                // отображаем список героев
+                Characters.render(uri);
             })
         })
     }

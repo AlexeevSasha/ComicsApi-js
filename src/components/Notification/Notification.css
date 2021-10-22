@@ -1,0 +1,18 @@
+.notification__container {
+    position: fixed;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid var(--color-dark);
+    background: var(--color-ligth);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.7);
+
+}
+
+.notification__close{
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+}
