@@ -1,13 +1,19 @@
 import { API_URL, URL_COMICS, IMG_STANDART_XLARGE, IMG_NOT_AVAILABLE, URL_CHARACTER } from '../../constants/api';
 import { getDataApi } from '../../utils/getDataApi';
 import { ROOT_INDEX } from '../../constants/root';
+import Error from '../Error/Error';
 import classes from './Comics.css'
 
 class Comics {
-    // вызываем метод getData и выводим на страницу elements
+    // вызываем метод getData
     async render() {
-        const data = await getDataApi.getData(API_URL + URL_COMICS);
+        const data = await getDataApi.getData(API_URL + URL_COMICS + 'test');
+        //проверка на ошибку
+        data ? this.renderComics(data) : Error.render();
+    }
 
+    // выводим на страницу elements
+    renderComics(data) {
         let htmlContent = '';
         // { id, title, thumbnail: {extension, path }}
         data.forEach(({ id, title, thumbnail: { extension, path } }) => {

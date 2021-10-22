@@ -15,7 +15,7 @@ class GetDataApi {
             return responce;
         } catch (error) {
             console.error(Promise.reject(error));
-            return false
+            return false;
         }
     }
 }
