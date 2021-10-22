@@ -38,3 +38,24 @@ body {
     background-color: var(--color-dark);
 }
 
+:global(.btn) {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+:global(.img-contain) {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+:global(.img-cover) {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
